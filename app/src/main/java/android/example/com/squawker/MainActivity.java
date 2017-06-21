@@ -86,12 +86,10 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
-        ContentValues values = new ContentValues();
-        values.put(SquawkContract.COLUMN_DATE, 1487968810557L);
-        values.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.LYLA_KEY);
-        values.put(SquawkContract.COLUMN_AUTHOR, "TheRealLyla");
-        values.put(SquawkContract.COLUMN_MESSAGE, "My nose itches");
-        getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, values);
+        Bundle extras = getIntent().getExtras();
+        if(extras != null && extras.containsKey("test")){
+            Log.d(LOG_TAG, "Contains: " + extras.getString("test"));
+        }
 
     }
 

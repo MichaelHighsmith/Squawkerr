@@ -43,4 +43,9 @@ dependencies {
     // to send a notification to your app using the Firebase console. The app must be in the
     // background!
 
+    //Firebase dependency
+    compile 'com.google.firebase:firebase-messaging:10.2.0'
+
 }
+
+apply plugin: 'com.google.gms.google-services'
